@@ -154,14 +154,7 @@ const SectionHeader = ({ title, subtitle }: { title: string; subtitle: string })
 );
 
 // --- AI Chat Component ---
-const getAiClient = () => {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
-    console.warn("GEMINI_API_KEY is missing. AI features will be disabled.");
-    return null;
-  }
-  return new GoogleGenAI({ apiKey });
-};
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 type Message = {
   id: string;
@@ -197,17 +190,6 @@ const ChatPanel = ({ isOpen, onClose, contextData }: { isOpen: boolean, onClose:
     setIsLoading(true);
 
     try {
-      const ai = getAiClient();
-      if (!ai) {
-        setMessages(prev => [...prev, {
-          id: Date.now().toString(),
-          role: 'model',
-          text: 'AI Assistant is currently unavailable because the API key is missing. Please check your environment configuration.'
-        }]);
-        setIsLoading(false);
-        return;
-      }
-
       let modelName = 'gemini-3-flash-preview';
       let config: any = {
         systemInstruction: "You are an expert data analyst and strategic advisor for the OKCL dashboard. You help users understand district performance, ALC infrastructure, and strategic roadmaps. Keep your answers concise, professional, and data-driven. Format your responses using markdown.",
@@ -379,10 +361,6 @@ export default function App() {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [progress, setProgress] = useState(0);
   const [isAiOpen, setIsAiOpen] = useState(false);
-
-  useEffect(() => {
-    console.log("OKCL Dashboard: App component mounted.");
-  }, []);
 
   // Data processing
   const stats = useMemo(() => {
