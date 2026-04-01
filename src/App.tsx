@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { 
   LayoutDashboard, 
   BarChart3, 
@@ -17,7 +17,16 @@ import {
   Pause,
   Play,
   Search,
-  Filter
+  Filter,
+  Sparkles,
+  Zap,
+  BrainCircuit,
+  MessageSquare,
+  Send,
+  X,
+  Bot,
+  User,
+  Loader2
 } from 'lucide-react';
 import { 
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, 
@@ -26,6 +35,8 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import { GoogleGenAI, ThinkingLevel } from '@google/genai';
+import Markdown from 'react-markdown';
 
 // --- Utilities ---
 function cn(...inputs: ClassValue[]) {
@@ -142,6 +153,206 @@ const SectionHeader = ({ title, subtitle }: { title: string; subtitle: string })
   </div>
 );
 
+// --- AI Chat Component ---
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+
+type Message = {
+  id: string;
+  role: 'user' | 'model';
+  text: string;
+};
+
+type ChatMode = 'fast' | 'general' | 'complex';
+
+const ChatPanel = ({ isOpen, onClose, contextData }: { isOpen: boolean, onClose: () => void, contextData: any }) => {
+  const [messages, setMessages] = useState<Message[]>([
+    { id: '1', role: 'model', text: 'Hello! I am your OKCL Strategic AI Assistant. How can I help you analyze the dashboard today?' }
+  ]);
+  const [input, setInput] = useState('');
+  const [mode, setMode] = useState<ChatMode>('general');
+  const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  const handleSend = async (text: string = input) => {
+    if (!text.trim() || isLoading) return;
+    
+    const userMsg: Message = { id: Date.now().toString(), role: 'user', text };
+    setMessages(prev => [...prev, userMsg]);
+    setInput('');
+    setIsLoading(true);
+
+    try {
+      let modelName = 'gemini-3-flash-preview';
+      let config: any = {
+        systemInstruction: "You are an expert data analyst and strategic advisor for the OKCL dashboard. You help users understand district performance, ALC infrastructure, and strategic roadmaps. Keep your answers concise, professional, and data-driven. Format your responses using markdown.",
+      };
+
+      if (mode === 'fast') {
+        modelName = 'gemini-3.1-flash-lite-preview';
+      } else if (mode === 'complex') {
+        modelName = 'gemini-3.1-pro-preview';
+        config.thinkingConfig = { thinkingLevel: ThinkingLevel.HIGH };
+      }
+
+      const history = messages.map(m => ({
+        role: m.role,
+        parts: [{ text: m.text }]
+      }));
+
+      let prompt = text;
+      if (messages.length === 1 || text.toLowerCase().includes('analyze')) {
+        prompt = `Context Data: ${JSON.stringify(contextData)}\n\nUser Query: ${text}`;
+      }
+
+      const chat = ai.chats.create({
+        model: modelName,
+        config,
+        history
+      });
+
+      const response = await chat.sendMessage({ message: prompt });
+      
+      setMessages(prev => [...prev, {
+        id: Date.now().toString(),
+        role: 'model',
+        text: response.text || 'No response generated.'
+      }]);
+    } catch (error) {
+      console.error("Chat error:", error);
+      setMessages(prev => [...prev, {
+        id: Date.now().toString(),
+        role: 'model',
+        text: 'Sorry, I encountered an error while processing your request.'
+      }]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ x: '100%', opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: '100%', opacity: 0 }}
+          transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+          className="fixed right-0 top-0 bottom-0 w-full md:w-[450px] 2xl:w-[600px] glass-dark border-l border-white/10 z-[100] flex flex-col shadow-2xl bg-[#05070a]/95 backdrop-blur-xl"
+        >
+          <div className="p-4 border-b border-white/10 flex justify-between items-center bg-white/5">
+            <div className="flex items-center gap-3">
+              <div className="p-2 bg-blue-500/20 text-blue-400 rounded-lg">
+                <Sparkles className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-white font-bold text-lg">AI Assistant</h3>
+                <p className="text-white/40 text-xs">Powered by Gemini</p>
+              </div>
+            </div>
+            <button onClick={onClose} className="p-2 text-white/40 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+
+          <div className="p-3 border-b border-white/10 flex gap-2 bg-black/20">
+            <button 
+              onClick={() => setMode('fast')}
+              className={cn("flex-1 py-2 px-3 rounded-lg text-xs font-medium flex items-center justify-center gap-2 transition-all", mode === 'fast' ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" : "bg-white/5 text-white/40 hover:bg-white/10")}
+            >
+              <Zap className="w-3 h-3" /> Fast
+            </button>
+            <button 
+              onClick={() => setMode('general')}
+              className={cn("flex-1 py-2 px-3 rounded-lg text-xs font-medium flex items-center justify-center gap-2 transition-all", mode === 'general' ? "bg-blue-500/20 text-blue-400 border border-blue-500/30" : "bg-white/5 text-white/40 hover:bg-white/10")}
+            >
+              <MessageSquare className="w-3 h-3" /> General
+            </button>
+            <button 
+              onClick={() => setMode('complex')}
+              className={cn("flex-1 py-2 px-3 rounded-lg text-xs font-medium flex items-center justify-center gap-2 transition-all", mode === 'complex' ? "bg-purple-500/20 text-purple-400 border border-purple-500/30" : "bg-white/5 text-white/40 hover:bg-white/10")}
+            >
+              <BrainCircuit className="w-3 h-3" /> High Thinking
+            </button>
+          </div>
+
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-hide">
+            {messages.map((msg) => (
+              <div key={msg.id} className={cn("flex gap-3 max-w-[90%]", msg.role === 'user' ? "ml-auto flex-row-reverse" : "")}>
+                <div className={cn("w-8 h-8 rounded-full flex items-center justify-center shrink-0", msg.role === 'user' ? "bg-blue-600 text-white" : "bg-white/10 text-blue-400")}>
+                  {msg.role === 'user' ? <User className="w-4 h-4" /> : <Bot className="w-4 h-4" />}
+                </div>
+                <div className={cn("p-3 rounded-2xl text-sm", msg.role === 'user' ? "bg-blue-600 text-white rounded-tr-none" : "bg-white/5 text-white/80 rounded-tl-none border border-white/10")}>
+                  {msg.role === 'model' ? (
+                    <div className="markdown-body prose prose-invert prose-sm max-w-none">
+                      <Markdown>{msg.text}</Markdown>
+                    </div>
+                  ) : (
+                    msg.text
+                  )}
+                </div>
+              </div>
+            ))}
+            {isLoading && (
+              <div className="flex gap-3 max-w-[90%]">
+                <div className="w-8 h-8 rounded-full bg-white/10 text-blue-400 flex items-center justify-center shrink-0">
+                  <Bot className="w-4 h-4" />
+                </div>
+                <div className="p-4 rounded-2xl bg-white/5 text-white/80 rounded-tl-none border border-white/10 flex items-center gap-2">
+                  <Loader2 className="w-4 h-4 animate-spin text-blue-400" />
+                  <span className="text-sm text-white/40">
+                    {mode === 'complex' ? 'Thinking deeply...' : 'Generating response...'}
+                  </span>
+                </div>
+              </div>
+            )}
+            <div ref={messagesEndRef} />
+          </div>
+
+          <div className="px-4 pb-2 flex gap-2 overflow-x-auto scrollbar-hide">
+            <button onClick={() => handleSend("Analyze the current district performance.")} className="whitespace-nowrap px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 text-white/60 text-xs transition-colors border border-white/5">
+              Analyze Performance
+            </button>
+            <button onClick={() => handleSend("What are the top 3 districts by achievement?")} className="whitespace-nowrap px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 text-white/60 text-xs transition-colors border border-white/5">
+              Top Districts
+            </button>
+            <button onClick={() => handleSend("Identify areas needing strategic intervention.")} className="whitespace-nowrap px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 text-white/60 text-xs transition-colors border border-white/5">
+              Strategic Insights
+            </button>
+          </div>
+
+          <div className="p-4 border-t border-white/10 bg-black/20">
+            <div className="relative flex items-center">
+              <input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+                placeholder="Ask about the dashboard data..."
+                className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-4 pr-12 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all"
+              />
+              <button 
+                onClick={() => handleSend()}
+                disabled={!input.trim() || isLoading}
+                className="absolute right-2 p-2 bg-blue-600 hover:bg-blue-500 disabled:bg-white/10 disabled:text-white/30 text-white rounded-lg transition-colors"
+              >
+                <Send className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
 // --- Main App ---
 
 export default function App() {
@@ -149,6 +360,7 @@ export default function App() {
   const [isAutoRotating, setIsAutoRotating] = useState(true);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [progress, setProgress] = useState(0);
+  const [isAiOpen, setIsAiOpen] = useState(false);
 
   // Data processing
   const stats = useMemo(() => {
@@ -282,6 +494,12 @@ export default function App() {
               </p>
             </div>
             <div className="flex gap-2 xl:gap-4 2xl:gap-8">
+              <button 
+                onClick={() => setIsAiOpen(true)}
+                className="p-2 xl:p-3 2xl:p-8 glass rounded-xl 2xl:rounded-[2rem] hover:bg-blue-500/20 transition-all text-blue-400 border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.3)]"
+              >
+                <Sparkles className="w-5 h-5 xl:w-6 xl:h-6 2xl:w-12 2xl:h-12" />
+              </button>
               <button className="p-2 xl:p-3 2xl:p-8 glass rounded-xl 2xl:rounded-[2rem] hover:bg-white/10 transition-all">
                 <Share2 className="w-5 h-5 xl:w-6 xl:h-6 2xl:w-12 2xl:h-12 text-white/60" />
               </button>
@@ -577,6 +795,13 @@ export default function App() {
             <motion.div key={activeSection} initial={{ width: 0 }} animate={{ width: '100%' }} transition={{ duration: 10, ease: "linear" }} className="h-full bg-blue-600 shadow-[0_0_20px_rgba(37,99,235,0.5)]" />
           )}
         </div>
+
+        {/* AI Chat Panel */}
+        <ChatPanel 
+          isOpen={isAiOpen} 
+          onClose={() => setIsAiOpen(false)} 
+          contextData={{ stats, tierData, topDistricts }} 
+        />
       </main>
     </div>
   );
