@@ -2,11 +2,45 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig, loadEnv} from 'vite';
+import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [
+      react(), 
+      tailwindcss(),
+      VitePWA({
+        registerType: 'autoUpdate',
+        includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
+        manifest: {
+          name: 'OKCL Strategic Dashboard',
+          short_name: 'OKCL Dash',
+          description: 'OKCL Strategic Dashboard with AI Assistant',
+          theme_color: '#05070a',
+          background_color: '#05070a',
+          display: 'standalone',
+          icons: [
+            {
+              src: 'pwa-192x192.svg',
+              sizes: '192x192',
+              type: 'image/svg+xml'
+            },
+            {
+              src: 'pwa-512x512.svg',
+              sizes: '512x512',
+              type: 'image/svg+xml'
+            },
+            {
+              src: 'pwa-512x512.svg',
+              sizes: '512x512',
+              type: 'image/svg+xml',
+              purpose: 'any maskable'
+            }
+          ]
+        }
+      })
+    ],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },
