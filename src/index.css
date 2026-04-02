@@ -6,6 +6,9 @@
   --font-display: "Rajdhani", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   --color-orange-primary: #f97316;
+
+  --breakpoint-3xl: 1920px;
+  --breakpoint-4xl: 2560px;
 }
 
 @layer base {

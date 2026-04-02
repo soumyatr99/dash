@@ -146,22 +146,22 @@ const LoadingPage = ({ onComplete }: { onComplete: () => void }) => {
         transition={{ duration: 0.5, ease: "circOut" }}
         className="relative"
       >
-        <div className="w-32 h-32 xl:w-48 xl:h-48 2xl:w-64 2xl:h-64 bg-blue-600 rounded-3xl flex items-center justify-center shadow-[0_0_50px_rgba(37,99,235,0.3)]">
-          <TrendingUp className="w-16 h-16 xl:w-24 xl:h-24 2xl:w-32 2xl:h-32 text-white" />
+        <div className="w-32 h-32 xl:w-40 xl:h-40 2xl:w-48 3xl:w-56 4xl:w-64 bg-blue-600 rounded-3xl 3xl:rounded-[2.5rem] 4xl:rounded-[3rem] flex items-center justify-center shadow-[0_0_50px_rgba(37,99,235,0.3)]">
+          <TrendingUp className="w-16 h-16 xl:w-20 xl:h-20 2xl:w-24 3xl:w-28 4xl:w-32 text-white" />
         </div>
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-          className="absolute -inset-4 border-2 border-blue-500/20 border-t-blue-500 rounded-[2.5rem]"
+          className="absolute -inset-4 border-2 border-blue-500/20 border-t-blue-500 rounded-[2.5rem] 3xl:rounded-[3rem] 4xl:rounded-[3.5rem]"
         />
       </motion.div>
       
-      <div className="mt-12 text-center">
+      <div className="mt-12 xl:mt-16 2xl:mt-20 3xl:mt-24 4xl:mt-32 text-center">
         <motion.h1 
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.1 }}
-          className="text-3xl xl:text-5xl 2xl:text-7xl font-black text-white tracking-tighter uppercase font-display"
+          className="text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl 4xl:text-7xl font-black text-white tracking-tighter uppercase font-display"
         >
           OKCL <span className="text-blue-500">Strategic</span>
         </motion.h1>
@@ -169,13 +169,13 @@ const LoadingPage = ({ onComplete }: { onComplete: () => void }) => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-white/30 text-sm xl:text-xl 2xl:text-3xl font-bold uppercase tracking-[0.3em] mt-4"
+          className="text-white/30 text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-3xl font-bold uppercase tracking-[0.3em] mt-4 xl:mt-6 2xl:mt-8 3xl:mt-10 4xl:mt-12"
         >
           Initializing Dashboard v4.0
         </motion.p>
       </div>
 
-      <div className="absolute bottom-24 w-64 h-1 bg-white/5 rounded-full overflow-hidden">
+      <div className="absolute bottom-24 xl:bottom-32 2xl:bottom-40 3xl:bottom-48 4xl:bottom-64 w-64 xl:w-80 2xl:w-96 3xl:w-[30rem] 4xl:w-[40rem] h-1 xl:h-1.5 2xl:h-2 3xl:h-3 4xl:h-4 bg-white/5 rounded-full overflow-hidden">
         <motion.div
           initial={{ x: '-100%' }}
           animate={{ x: '0%' }}
@@ -253,27 +253,27 @@ const LoginPage = ({ onLogin }: { onLogin: (username: string) => void }) => {
       <motion.div 
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="w-full max-w-[450px] xl:max-w-[550px] 2xl:max-w-[800px] glass p-8 xl:p-12 2xl:p-24 rounded-[2rem] xl:rounded-[3rem] 2xl:rounded-[5rem] border border-white/10 relative z-10"
+        className="w-full max-w-[450px] xl:max-w-[500px] 2xl:max-w-[600px] 3xl:max-w-[700px] 4xl:max-w-[1000px] glass p-8 xl:p-10 2xl:p-12 3xl:p-16 4xl:p-32 rounded-[2rem] xl:rounded-[2.5rem] 2xl:rounded-[3rem] 3xl:rounded-[4rem] 4xl:rounded-[6rem] border border-white/10 relative z-10"
       >
-        <div className="flex flex-col items-center mb-12 xl:mb-16 2xl:mb-32">
-          <div className="w-16 h-16 xl:w-20 xl:h-20 2xl:w-32 2xl:h-32 bg-blue-600 rounded-2xl flex items-center justify-center shadow-xl shadow-blue-500/20 mb-6">
-            <ShieldCheck className="w-8 h-8 xl:w-10 xl:h-10 2xl:w-16 2xl:h-16 text-white" />
+        <div className="flex flex-col items-center mb-12 xl:mb-14 2xl:mb-16 3xl:mb-20 4xl:mb-40">
+          <div className="w-16 h-16 xl:w-18 xl:h-18 2xl:w-20 3xl:w-24 4xl:w-48 bg-blue-600 rounded-2xl 3xl:rounded-3xl 4xl:rounded-[3rem] flex items-center justify-center shadow-xl shadow-blue-500/20 mb-6 xl:mb-8 2xl:mb-10 3xl:mb-12 4xl:mb-20">
+            <ShieldCheck className="w-8 h-8 xl:w-9 xl:h-9 2xl:w-10 3xl:w-12 4xl:w-24 text-white" />
           </div>
-          <h2 className="text-3xl xl:text-4xl 2xl:text-7xl font-black text-white font-display uppercase tracking-tight">Secure Access</h2>
-          <p className="text-white/40 text-sm xl:text-lg 2xl:text-3xl mt-2">Enter your password to continue</p>
+          <h2 className="text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl 4xl:text-9xl font-black text-white font-display uppercase tracking-tight">Secure Access</h2>
+          <p className="text-white/40 text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl mt-2 xl:mt-3 2xl:mt-4 3xl:mt-6 4xl:mt-10">Enter your password to continue</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6 xl:space-y-8 2xl:space-y-16">
-          <div className="space-y-2 xl:space-y-4 2xl:space-y-8">
-            <label className="text-white/40 text-xs xl:text-sm 2xl:text-2xl font-bold uppercase tracking-widest ml-1">Password</label>
+        <form onSubmit={handleSubmit} className="space-y-6 xl:space-y-7 2xl:space-y-8 3xl:space-y-10 4xl:space-y-20">
+          <div className="space-y-2 xl:space-y-3 2xl:space-y-4 3xl:space-y-6 4xl:space-y-12">
+            <label className="text-white/40 text-xs xl:text-sm 2xl:text-base 3xl:text-lg 4xl:text-3xl font-bold uppercase tracking-widest ml-1">Password</label>
             <div className="relative">
-              <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 xl:w-6 xl:h-6 2xl:w-10 2xl:h-10 text-white/20" />
+              <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 xl:w-5.5 xl:h-5.5 2xl:w-6 3xl:w-8 4xl:w-16 text-white/20" />
               <input
                 type={showPassword ? "text" : "password"}
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-white/5 border border-white/10 rounded-xl xl:rounded-2xl 2xl:rounded-[2rem] py-4 xl:py-5 2xl:py-10 pl-12 xl:pl-14 2xl:pl-24 pr-12 text-white text-sm xl:text-base 2xl:text-3xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all"
+                className="w-full bg-white/5 border border-white/10 rounded-xl xl:rounded-2xl 2xl:rounded-[1.5rem] 3xl:rounded-[2rem] 4xl:rounded-[3rem] py-4 xl:py-4.5 2xl:py-5 3xl:py-6 4xl:py-12 pl-12 xl:pl-13 2xl:pl-14 3xl:pl-18 4xl:pl-32 pr-12 text-white text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all"
                 placeholder="••••••••"
               />
               <button
@@ -281,14 +281,14 @@ const LoginPage = ({ onLogin }: { onLogin: (username: string) => void }) => {
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute right-4 top-1/2 -translate-y-1/2 text-white/20 hover:text-white transition-colors"
               >
-                {showPassword ? <EyeOff className="w-5 h-5 xl:w-6 xl:h-6 2xl:w-10 2xl:h-10" /> : <Eye className="w-5 h-5 xl:w-6 xl:h-6 2xl:w-10 2xl:h-10" />}
+                {showPassword ? <EyeOff className="w-5 h-5 xl:w-6 xl:h-6 2xl:w-8 3xl:w-10 4xl:w-20" /> : <Eye className="w-5 h-5 xl:w-6 xl:h-6 2xl:w-8 3xl:w-10 4xl:w-20" />}
               </button>
             </div>
             {error && (
               <motion.p 
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-rose-400 text-xs xl:text-sm 2xl:text-2xl mt-2 ml-1"
+                className="text-rose-400 text-xs xl:text-sm 2xl:text-base 3xl:text-lg 4xl:text-3xl mt-2 ml-1"
               >
                 {error}
               </motion.p>
@@ -298,14 +298,14 @@ const LoginPage = ({ onLogin }: { onLogin: (username: string) => void }) => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-4 xl:py-5 2xl:py-10 rounded-xl xl:rounded-2xl 2xl:rounded-[2rem] text-sm xl:text-base 2xl:text-3xl uppercase tracking-widest transition-all shadow-lg shadow-blue-600/20 flex items-center justify-center gap-3"
+            className="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-4 xl:py-4.5 2xl:py-5 3xl:py-6 4xl:py-12 rounded-xl xl:rounded-2xl 2xl:rounded-[1.5rem] 3xl:rounded-[2rem] 4xl:rounded-[3rem] text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl uppercase tracking-widest transition-all shadow-lg shadow-blue-600/20 flex items-center justify-center gap-3"
           >
-            {isLoading ? <Loader2 className="w-5 h-5 xl:w-6 xl:h-6 2xl:w-10 2xl:h-10 animate-spin" /> : "Sign In to Dashboard"}
+            {isLoading ? <Loader2 className="w-5 h-5 xl:w-6 xl:h-6 2xl:w-8 3xl:w-10 4xl:w-20 animate-spin" /> : "Sign In to Dashboard"}
           </button>
         </form>
 
-        <div className="mt-8 text-center">
-          <p className="text-white/20 text-xs xl:text-sm 2xl:text-2xl">
+        <div className="mt-8 xl:mt-10 2xl:mt-12 3xl:mt-16 4xl:mt-32 text-center">
+          <p className="text-white/20 text-xs xl:text-sm 2xl:text-base 3xl:text-lg 4xl:text-3xl">
             Forgot password? <a href="#" className="text-blue-400 hover:underline">Contact Support</a>
           </p>
         </div>
@@ -319,32 +319,32 @@ const StatCard = ({ label, value, subValue, icon: Icon, trend, color, progress, 
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     className={cn(
-      "glass p-4 xl:p-6 2xl:p-12 rounded-2xl 2xl:rounded-[3rem] flex flex-col justify-between h-full group hover:bg-white/10 transition-all duration-500 relative overflow-hidden",
-      isTvMode && "p-6 xl:p-10 2xl:p-20"
+      "glass p-4 xl:p-6 2xl:p-8 3xl:p-10 4xl:p-12 rounded-2xl 2xl:rounded-[2rem] 3xl:rounded-[2.5rem] 4xl:rounded-[3rem] flex flex-col justify-between h-full group hover:bg-white/10 transition-all duration-500 relative overflow-hidden",
+      isTvMode && "p-6 xl:p-10 2xl:p-14 3xl:p-16 4xl:p-20"
     )}
   >
     <div className="absolute top-0 left-0 right-0 h-1 bg-white/5">
       <div className={cn("h-full transition-all duration-1000", color.replace('text-', 'bg-'))} style={{ width: `${progress || 0}%` }} />
     </div>
     <div className="flex justify-between items-start">
-      <div className={cn("p-2 xl:p-3 2xl:p-6 rounded-xl 2xl:rounded-3xl bg-white/5", isTvMode && "p-4 xl:p-6 2xl:p-12")}>
-        <Icon className={cn("w-6 h-6 xl:w-8 xl:h-8 2xl:w-16 2xl:h-16", color, isTvMode && "w-10 h-10 xl:w-14 xl:h-14 2xl:w-28 2xl:h-28")} />
+      <div className={cn("p-2 xl:p-3 2xl:p-4 3xl:p-5 4xl:p-6 rounded-xl 2xl:rounded-2xl 3xl:rounded-[1.5rem] 4xl:rounded-3xl bg-white/5", isTvMode && "p-4 xl:p-6 2xl:p-8 3xl:p-10 4xl:p-12")}>
+        <Icon className={cn("w-6 h-6 xl:w-8 xl:h-8 2xl:w-10 3xl:w-12 4xl:w-16", color, isTvMode && "w-10 h-10 xl:w-14 xl:h-18 2xl:w-22 3xl:w-24 4xl:w-28")} />
       </div>
       {trend && (
         <div className={cn(
-          "flex items-center gap-1 px-2 py-0.5 xl:px-3 xl:py-1 2xl:px-6 2xl:py-2 rounded-full text-xs xl:text-sm 2xl:text-2xl font-bold",
+          "flex items-center gap-1 px-2 py-0.5 xl:px-3 xl:py-1 2xl:px-4 3xl:px-5 4xl:px-6 rounded-full text-xs xl:text-sm 2xl:text-base 3xl:text-lg 4xl:text-2xl font-bold",
           trend > 0 ? "bg-emerald-500/20 text-emerald-400" : "bg-rose-500/20 text-rose-400",
-          isTvMode && "px-4 py-2 xl:px-6 xl:py-3 2xl:px-12 2xl:py-6 text-sm xl:text-xl 2xl:text-4xl"
+          isTvMode && "px-4 py-2 xl:px-6 xl:py-4 2xl:px-8 3xl:px-10 4xl:px-12 text-sm xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl"
         )}>
-          {trend > 0 ? <ArrowUpRight className="w-3 h-3 xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" /> : <ArrowDownRight className="w-3 h-3 xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />}
+          {trend > 0 ? <ArrowUpRight className="w-3 h-3 xl:w-4 xl:h-4 2xl:w-5 3xl:w-6 4xl:w-8" /> : <ArrowDownRight className="w-3 h-3 xl:w-4 xl:h-4 2xl:w-5 3xl:w-6 4xl:w-8" />}
           {Math.abs(trend)}%
         </div>
       )}
     </div>
-    <div className="mt-4 xl:mt-6 2xl:mt-12">
-      <p className={cn("text-white/50 text-[10px] xl:text-xs 2xl:text-2xl font-bold uppercase tracking-widest font-display", isTvMode && "text-xs xl:text-lg 2xl:text-4xl")}>{label}</p>
-      <h3 className={cn("text-2xl xl:text-4xl 2xl:text-8xl font-black mt-1 2xl:mt-4 text-glow font-display leading-none", isTvMode && "text-4xl xl:text-6xl 2xl:text-[12rem]")}>{value}</h3>
-      {subValue && <p className={cn("text-white/30 text-[10px] xl:text-sm 2xl:text-xl mt-1 2xl:mt-4 truncate font-mono", isTvMode && "text-sm xl:text-xl 2xl:text-4xl")}>{subValue}</p>}
+    <div className="mt-4 xl:mt-6 2xl:mt-8 3xl:mt-10 4xl:mt-12">
+      <p className={cn("text-white/50 text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base 4xl:text-2xl font-bold uppercase tracking-widest font-display", isTvMode && "text-xs xl:text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-4xl")}>{label}</p>
+      <h3 className={cn("text-2xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl 4xl:text-8xl font-black mt-1 2xl:mt-2 3xl:mt-3 4xl:mt-4 text-glow font-display leading-none", isTvMode && "text-4xl xl:text-6xl 2xl:text-8xl 3xl:text-9xl 4xl:text-[12rem]")}>{value}</h3>
+      {subValue && <p className={cn("text-white/30 text-[10px] xl:text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl mt-1 2xl:mt-2 3xl:mt-3 4xl:mt-4 truncate font-mono", isTvMode && "text-sm xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl")}>{subValue}</p>}
     </div>
   </motion.div>
 );
@@ -357,49 +357,49 @@ const DaysStrip = () => {
   const daysInYear = Math.round((yearEnd.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 xl:gap-8 2xl:gap-16 mb-6 xl:mb-10 2xl:mb-20">
-      <div className="glass p-4 xl:p-6 2xl:p-12 rounded-2xl 2xl:rounded-[3rem] flex items-center gap-4 xl:gap-8 2xl:gap-16">
-        <div className="text-3xl xl:text-5xl 2xl:text-9xl">📅</div>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-16 mb-6 xl:mb-8 2xl:mb-10 3xl:mb-12 4xl:mb-20">
+      <div className="glass p-4 xl:p-6 2xl:p-8 3xl:p-10 4xl:p-12 rounded-2xl 2xl:rounded-[2rem] 3xl:rounded-[2.5rem] 4xl:rounded-[3rem] flex items-center gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-16">
+        <div className="text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl 4xl:text-9xl">📅</div>
         <div className="flex-1">
           <div className="flex items-center justify-between">
-            <span className="text-white/40 text-[10px] xl:text-sm 2xl:text-2xl font-bold uppercase tracking-widest">Days left in month</span>
-            <span className={cn("px-2 py-0.5 xl:px-3 xl:py-1 2xl:px-6 2xl:py-2 rounded-full text-[8px] xl:text-xs 2xl:text-xl font-black", daysLeft <= 5 ? "bg-rose-500/20 text-rose-400" : "bg-orange-500/20 text-orange-400")}>
+            <span className="text-white/40 text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base 4xl:text-2xl font-bold uppercase tracking-widest">Days left in month</span>
+            <span className={cn("px-2 py-0.5 xl:px-3 xl:py-1 2xl:px-4 3xl:px-5 4xl:px-6 rounded-full text-[8px] xl:text-[10px] 2xl:text-xs 3xl:text-sm 4xl:text-xl font-black", daysLeft <= 5 ? "bg-rose-500/20 text-rose-400" : "bg-orange-500/20 text-orange-400")}>
               {daysLeft <= 5 ? '🚨 URGENT' : '⚠️ NEEDS PUSH'}
             </span>
           </div>
-          <div className="flex items-baseline gap-2 xl:gap-4 2xl:gap-8 mt-1 2xl:mt-4">
-            <span className={cn("text-2xl xl:text-4xl 2xl:text-8xl font-black font-display", daysLeft <= 5 ? "text-rose-500" : "text-orange-500")}>{daysLeft}</span>
-            <span className="text-white/20 text-[10px] xl:text-sm 2xl:text-2xl font-medium">Month ends {now.toLocaleString('default', { month: 'long' })} {daysInMonth}</span>
+          <div className="flex items-baseline gap-2 xl:gap-3 2xl:gap-4 3xl:gap-6 4xl:gap-8 mt-1 2xl:mt-2 3xl:mt-3 4xl:mt-4">
+            <span className={cn("text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl 4xl:text-8xl font-black font-display", daysLeft <= 5 ? "text-rose-500" : "text-orange-500")}>{daysLeft}</span>
+            <span className="text-white/20 text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base 4xl:text-2xl font-medium">Month ends {now.toLocaleString('default', { month: 'long' })} {daysInMonth}</span>
           </div>
         </div>
       </div>
-      <div className="glass p-4 xl:p-6 2xl:p-12 rounded-2xl 2xl:rounded-[3rem] flex items-center gap-4 xl:gap-8 2xl:gap-16">
-        <div className="text-3xl xl:text-5xl 2xl:text-9xl">📆</div>
+      <div className="glass p-4 xl:p-6 2xl:p-8 3xl:p-10 4xl:p-12 rounded-2xl 2xl:rounded-[2rem] 3xl:rounded-[2.5rem] 4xl:rounded-[3rem] flex items-center gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-16">
+        <div className="text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl 4xl:text-9xl">📆</div>
         <div className="flex-1">
           <div className="flex items-center justify-between">
-            <span className="text-white/40 text-[10px] xl:text-sm 2xl:text-2xl font-bold uppercase tracking-widest">Days left in {now.getFullYear()}</span>
-            <span className="px-2 py-0.5 xl:px-3 xl:py-1 2xl:px-6 2xl:py-2 rounded-full bg-blue-500/20 text-blue-400 text-[8px] xl:text-xs 2xl:text-xl font-black">
+            <span className="text-white/40 text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base 4xl:text-2xl font-bold uppercase tracking-widest">Days left in {now.getFullYear()}</span>
+            <span className="px-2 py-0.5 xl:px-3 xl:py-1 2xl:px-4 3xl:px-5 4xl:px-6 rounded-full bg-blue-500/20 text-blue-400 text-[8px] xl:text-[10px] 2xl:text-xs 3xl:text-sm 4xl:text-xl font-black">
               Q{Math.floor(now.getMonth() / 3) + 1} {now.getFullYear()}
             </span>
           </div>
-          <div className="flex items-baseline gap-2 xl:gap-4 2xl:gap-8 mt-1 2xl:mt-4">
-            <span className="text-2xl xl:text-4xl 2xl:text-8xl font-black font-display text-blue-500">{daysInYear}</span>
-            <span className="text-white/20 text-[10px] xl:text-sm 2xl:text-2xl font-medium">Year ends December 31</span>
+          <div className="flex items-baseline gap-2 xl:gap-3 2xl:gap-4 3xl:gap-6 4xl:gap-8 mt-1 2xl:mt-2 3xl:mt-3 4xl:mt-4">
+            <span className="text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl 4xl:text-8xl font-black font-display text-blue-500">{daysInYear}</span>
+            <span className="text-white/20 text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base 4xl:text-2xl font-medium">Year ends December 31</span>
           </div>
         </div>
       </div>
-      <div className="glass p-4 xl:p-6 2xl:p-12 rounded-2xl 2xl:rounded-[3rem] flex items-center gap-4 xl:gap-8 2xl:gap-16">
-        <div className="text-3xl xl:text-5xl 2xl:text-9xl">🎯</div>
+      <div className="glass p-4 xl:p-6 2xl:p-8 3xl:p-10 4xl:p-12 rounded-2xl 2xl:rounded-[2rem] 3xl:rounded-[2.5rem] 4xl:rounded-[3rem] flex items-center gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-16">
+        <div className="text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl 4xl:text-9xl">🎯</div>
         <div className="flex-1">
           <div className="flex items-center justify-between">
-            <span className="text-white/40 text-[10px] xl:text-sm 2xl:text-2xl font-bold uppercase tracking-widest">Strategic Milestone</span>
-            <span className="px-2 py-0.5 xl:px-3 xl:py-1 2xl:px-6 2xl:py-2 rounded-full bg-emerald-500/20 text-emerald-400 text-[8px] xl:text-xs 2xl:text-xl font-black">
+            <span className="text-white/40 text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base 4xl:text-2xl font-bold uppercase tracking-widest">Strategic Milestone</span>
+            <span className="px-2 py-0.5 xl:px-3 xl:py-1 2xl:px-4 3xl:px-5 4xl:px-6 rounded-full bg-emerald-500/20 text-emerald-400 text-[8px] xl:text-[10px] 2xl:text-xs 3xl:text-sm 4xl:text-xl font-black">
               ON TRACK
             </span>
           </div>
-          <div className="flex items-baseline gap-2 xl:gap-4 2xl:gap-8 mt-1 2xl:mt-4">
-            <span className="text-2xl xl:text-4xl 2xl:text-8xl font-black font-display text-emerald-500">25K</span>
-            <span className="text-white/20 text-[10px] xl:text-sm 2xl:text-2xl font-medium">Monthly Admission Goal</span>
+          <div className="flex items-baseline gap-2 xl:gap-3 2xl:gap-4 3xl:gap-6 4xl:gap-8 mt-1 2xl:mt-2 3xl:mt-3 4xl:mt-4">
+            <span className="text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl 4xl:text-8xl font-black font-display text-emerald-500">25K</span>
+            <span className="text-white/20 text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base 4xl:text-2xl font-medium">Monthly Admission Goal</span>
           </div>
         </div>
       </div>
@@ -408,34 +408,34 @@ const DaysStrip = () => {
 };
 
 const AlertRow = () => (
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 xl:gap-8 2xl:gap-16 mt-6 xl:mt-10 2xl:mt-20">
-    <div className="glass p-4 xl:p-6 2xl:p-12 rounded-2xl 2xl:rounded-[3rem] border-l-4 border-rose-500 flex items-center gap-4 xl:gap-8 2xl:gap-16 group hover:translate-x-1 transition-transform cursor-pointer">
-      <div className="w-10 h-10 xl:w-16 xl:h-16 2xl:w-32 2xl:h-32 rounded-full bg-rose-500/10 flex items-center justify-center text-rose-500 animate-pulse">
-        <AlertCircle className="w-6 h-6 xl:w-8 xl:h-8 2xl:w-16 2xl:h-16" />
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-16 mt-6 xl:mt-8 2xl:mt-10 3xl:mt-12 4xl:mt-20">
+    <div className="glass p-4 xl:p-6 2xl:p-8 3xl:p-10 4xl:p-12 rounded-2xl 2xl:rounded-[2rem] 3xl:rounded-[2.5rem] 4xl:rounded-[3rem] border-l-4 border-rose-500 flex items-center gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-16 group hover:translate-x-1 transition-transform cursor-pointer">
+      <div className="w-10 h-10 xl:w-12 xl:h-12 2xl:w-16 3xl:w-20 4xl:w-32 rounded-full bg-rose-500/10 flex items-center justify-center text-rose-500 animate-pulse">
+        <AlertCircle className="w-6 h-6 xl:w-7 xl:h-7 2xl:w-8 3xl:w-10 4xl:w-16" />
       </div>
       <div>
-        <h4 className="text-xl xl:text-3xl 2xl:text-6xl font-black text-rose-500 font-display">208</h4>
-        <p className="text-white/40 text-[10px] xl:text-sm 2xl:text-2xl font-bold uppercase tracking-widest">Zero Confirmation ALCs</p>
+        <h4 className="text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-6xl font-black text-rose-500 font-display">208</h4>
+        <p className="text-white/40 text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base 4xl:text-2xl font-bold uppercase tracking-widest">Zero Confirmation ALCs</p>
       </div>
       <ChevronRight className="ml-auto text-white/20 group-hover:text-white transition-colors" />
     </div>
-    <div className="glass p-4 xl:p-6 2xl:p-12 rounded-2xl 2xl:rounded-[3rem] border-l-4 border-amber-500 flex items-center gap-4 xl:gap-8 2xl:gap-16 group hover:translate-x-1 transition-transform cursor-pointer">
-      <div className="w-10 h-10 xl:w-16 xl:h-16 2xl:w-32 2xl:h-32 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500">
-        <Clock className="w-6 h-6 xl:w-8 xl:h-8 2xl:w-16 2xl:h-16" />
+    <div className="glass p-4 xl:p-6 2xl:p-8 3xl:p-10 4xl:p-12 rounded-2xl 2xl:rounded-[2rem] 3xl:rounded-[2.5rem] 4xl:rounded-[3rem] border-l-4 border-amber-500 flex items-center gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-16 group hover:translate-x-1 transition-transform cursor-pointer">
+      <div className="w-10 h-10 xl:w-12 xl:h-12 2xl:w-16 3xl:w-20 4xl:w-32 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500">
+        <Clock className="w-6 h-6 xl:w-7 xl:h-7 2xl:w-8 3xl:w-10 4xl:w-16" />
       </div>
       <div>
-        <h4 className="text-xl xl:text-3xl 2xl:text-6xl font-black text-amber-500 font-display">4,203</h4>
-        <p className="text-white/40 text-[10px] xl:text-sm 2xl:text-2xl font-bold uppercase tracking-widest">Pending Payments</p>
+        <h4 className="text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-6xl font-black text-amber-500 font-display">4,203</h4>
+        <p className="text-white/40 text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base 4xl:text-2xl font-bold uppercase tracking-widest">Pending Payments</p>
       </div>
       <ChevronRight className="ml-auto text-white/20 group-hover:text-white transition-colors" />
     </div>
-    <div className="glass p-4 xl:p-6 2xl:p-12 rounded-2xl 2xl:rounded-[3rem] border-l-4 border-orange-500 flex items-center gap-4 xl:gap-8 2xl:gap-16 group hover:translate-x-1 transition-transform cursor-pointer">
-      <div className="w-10 h-10 xl:w-16 xl:h-16 2xl:w-32 2xl:h-32 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500">
-        <TrendingUp className="w-6 h-6 xl:w-8 xl:h-8 2xl:w-16 2xl:h-16" />
+    <div className="glass p-4 xl:p-6 2xl:p-8 3xl:p-10 4xl:p-12 rounded-2xl 2xl:rounded-[2rem] 3xl:rounded-[2.5rem] 4xl:rounded-[3rem] border-l-4 border-orange-500 flex items-center gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-16 group hover:translate-x-1 transition-transform cursor-pointer">
+      <div className="w-10 h-10 xl:w-12 xl:h-12 2xl:w-16 3xl:w-20 4xl:w-32 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500">
+        <TrendingUp className="w-6 h-6 xl:w-7 xl:h-7 2xl:w-8 3xl:w-10 4xl:w-16" />
       </div>
       <div>
-        <h4 className="text-xl xl:text-3xl 2xl:text-6xl font-black text-orange-500 font-display">22</h4>
-        <p className="text-white/40 text-[10px] xl:text-sm 2xl:text-2xl font-bold uppercase tracking-widest">Districts Below 40%</p>
+        <h4 className="text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-6xl font-black text-orange-500 font-display">22</h4>
+        <p className="text-white/40 text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base 4xl:text-2xl font-bold uppercase tracking-widest">Districts Below 40%</p>
       </div>
       <ChevronRight className="ml-auto text-white/20 group-hover:text-white transition-colors" />
     </div>
@@ -443,20 +443,20 @@ const AlertRow = () => (
 );
 
 const RMZones = () => (
-  <div className="glass p-6 xl:p-10 2xl:p-20 rounded-2xl 2xl:rounded-[4rem] mt-6 xl:mt-10 2xl:mt-20">
-    <div className="flex justify-between items-center mb-6 xl:mb-10 2xl:mb-20">
+  <div className="glass p-6 xl:p-8 2xl:p-10 3xl:p-12 4xl:p-20 rounded-2xl 2xl:rounded-[2.5rem] 3xl:rounded-[3rem] 4xl:rounded-[4rem] mt-6 xl:mt-8 2xl:mt-10 3xl:mt-12 4xl:mt-20">
+    <div className="flex justify-between items-center mb-6 xl:mb-8 2xl:mb-10 3xl:mb-12 4xl:mb-20">
       <div>
-        <h3 className="text-xl xl:text-3xl 2xl:text-6xl font-black text-white font-display">Regional Manager Zones</h3>
-        <p className="text-white/30 text-sm xl:text-lg 2xl:text-4xl mt-1 2xl:mt-4 uppercase tracking-widest font-bold">March 2026 Strategic Performance</p>
+        <h3 className="text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-6xl font-black text-white font-display">Regional Manager Zones</h3>
+        <p className="text-white/30 text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl mt-1 2xl:mt-2 3xl:mt-3 4xl:mt-4 uppercase tracking-widest font-bold">March 2026 Strategic Performance</p>
       </div>
       <div className="p-3 bg-orange-500/20 text-orange-400 rounded-xl border border-orange-500/30">
-        <Users className="w-6 h-6 xl:w-8 xl:h-8 2xl:w-16 2xl:h-16" />
+        <Users className="w-6 h-6 xl:w-7 xl:h-7 2xl:w-8 3xl:w-10 4xl:w-16" />
       </div>
     </div>
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 xl:gap-8 2xl:gap-16">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-16">
       {RM_DATA.map((rm) => (
-        <div key={rm.name} className="bg-white/5 p-4 xl:p-6 2xl:p-12 rounded-2xl 2xl:rounded-[3rem] border border-white/5 flex flex-col items-center text-center group hover:bg-white/10 transition-all">
-          <div className="relative w-20 h-20 xl:w-32 xl:h-32 2xl:w-64 2xl:h-64 mb-4 xl:mb-8 2xl:mb-16">
+        <div key={rm.name} className="bg-white/5 p-4 xl:p-6 2xl:p-8 3xl:p-10 4xl:p-12 rounded-2xl 2xl:rounded-[2rem] 3xl:rounded-[2.5rem] 4xl:rounded-[3rem] border border-white/5 flex flex-col items-center text-center group hover:bg-white/10 transition-all">
+          <div className="relative w-20 h-20 xl:w-24 xl:h-24 2xl:w-32 3xl:w-40 4xl:w-64 mb-4 xl:mb-6 2xl:mb-8 3xl:mb-10 4xl:mb-16">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie data={[{ value: rm.pct }, { value: 100 - rm.pct }]} innerRadius="75%" outerRadius="100%" startAngle={90} endAngle={450} dataKey="value" stroke="none">
@@ -466,13 +466,13 @@ const RMZones = () => (
               </PieChart>
             </ResponsiveContainer>
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <span className="text-lg xl:text-2xl 2xl:text-5xl font-black font-display" style={{ color: rm.color }}>{rm.pct}%</span>
+              <span className="text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-5xl font-black font-display" style={{ color: rm.color }}>{rm.pct}%</span>
             </div>
           </div>
-          <h4 className="text-sm xl:text-lg 2xl:text-4xl font-black text-white mb-1 2xl:mb-4">{rm.short}</h4>
-          <p className="text-white/30 text-[8px] xl:text-xs 2xl:text-2xl font-mono mb-3 2xl:mb-8">{rm.conf.toLocaleString()} / {rm.tgt.toLocaleString()}</p>
+          <h4 className="text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl font-black text-white mb-1 2xl:mt-2 3xl:mt-3 4xl:mb-4">{rm.short}</h4>
+          <p className="text-white/30 text-[8px] xl:text-[10px] 2xl:text-xs 3xl:text-sm 4xl:text-2xl font-mono mb-3 2xl:mb-6 3xl:mb-8 4xl:mb-8">{rm.conf.toLocaleString()} / {rm.tgt.toLocaleString()}</p>
           <div className={cn(
-            "px-3 py-1 xl:px-4 xl:py-2 2xl:px-8 2xl:py-4 rounded-lg text-[8px] xl:text-xs 2xl:text-2xl font-black uppercase tracking-widest",
+            "px-3 py-1 xl:px-4 xl:py-2 2xl:px-5 3xl:px-6 4xl:px-8 2xl:py-3 3xl:py-4 4xl:py-4 rounded-lg text-[8px] xl:text-[10px] 2xl:text-xs 3xl:text-sm 4xl:text-2xl font-black uppercase tracking-widest",
             rm.pct >= 45 ? "bg-emerald-500/10 text-emerald-400" : rm.pct >= 35 ? "bg-amber-500/10 text-amber-400" : "bg-rose-500/10 text-rose-400"
           )}>
             {rm.pct >= 45 ? '✅ Good' : rm.pct >= 35 ? '⚠️ Watch' : '🔴 Low'}
@@ -484,9 +484,9 @@ const RMZones = () => (
 );
 
 const SectionHeader = ({ title, subtitle }: { title: string; subtitle: string }) => (
-  <div className="mb-4 xl:mb-8 2xl:mb-16">
-    <h2 className="text-2xl xl:text-3xl 2xl:text-7xl font-black tracking-tight text-glow-blue">{title}</h2>
-    <p className="text-white/40 text-sm xl:text-lg 2xl:text-4xl mt-1 2xl:mt-4 font-medium">{subtitle}</p>
+  <div className="mb-4 xl:mb-6 2xl:mb-8 3xl:mb-10 4xl:mb-16">
+    <h2 className="text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl 4xl:text-7xl font-black tracking-tight text-glow-blue">{title}</h2>
+    <p className="text-white/40 text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl mt-1 2xl:mt-2 3xl:mt-3 4xl:mt-4 font-medium">{subtitle}</p>
   </div>
 );
 
@@ -645,12 +645,12 @@ export default function App() {
     )}>
       {/* Sidebar - Hidden on mobile and in TV Mode */}
       {!isTvMode && (
-        <aside className="hidden md:flex w-20 xl:w-24 2xl:w-48 glass-dark flex-col items-center py-6 xl:py-12 2xl:py-24 gap-6 xl:gap-12 2xl:gap-24 border-r border-white/5 z-50">
-          <div className="w-10 h-10 xl:w-12 xl:h-12 2xl:w-24 2xl:h-24 bg-blue-600 rounded-xl 2xl:rounded-3xl flex items-center justify-center shadow-2xl shadow-blue-500/20">
-            <TrendingUp className="w-6 h-6 xl:w-8 xl:h-8 2xl:w-14 2xl:h-14 text-white" />
+        <aside className="hidden md:flex w-20 xl:w-24 2xl:w-32 3xl:w-40 4xl:w-48 glass-dark flex-col items-center py-6 xl:py-12 2xl:py-16 3xl:py-20 4xl:py-24 gap-6 xl:gap-8 2xl:gap-10 3xl:gap-12 4xl:gap-24 border-r border-white/5 z-50">
+          <div className="w-10 h-10 xl:w-12 xl:h-12 2xl:w-16 3xl:w-20 4xl:w-24 bg-blue-600 rounded-xl 2xl:rounded-2xl 3xl:rounded-3xl flex items-center justify-center shadow-2xl shadow-blue-500/20">
+            <TrendingUp className="w-6 h-6 xl:w-8 xl:h-8 2xl:w-10 3xl:w-12 4xl:w-14 text-white" />
           </div>
           
-          <nav className="flex-1 flex flex-col gap-4 xl:gap-8 2xl:gap-16">
+          <nav className="flex-1 flex flex-col gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-16">
             {SECTIONS.map((section, idx) => (
               <button
                 key={section.id}
@@ -660,13 +660,13 @@ export default function App() {
                   setIsAutoRotating(false);
                 }}
                 className={cn(
-                  "p-3 xl:p-4 2xl:p-10 rounded-xl 2xl:rounded-[2rem] transition-all duration-500 group relative",
+                  "p-3 xl:p-4 2xl:p-6 3xl:p-8 4xl:p-10 rounded-xl 2xl:rounded-2xl 3xl:rounded-[2rem] transition-all duration-500 group relative",
                   activeSection === idx && !isTvMode ? "bg-blue-600 text-white shadow-lg shadow-blue-600/40" : "text-white/30 hover:text-white hover:bg-white/5"
                 )}
               >
-                <section.icon className="w-6 h-6 xl:w-7 xl:h-7 2xl:w-14 2xl:h-14" />
+                <section.icon className="w-6 h-6 xl:w-7 xl:h-7 2xl:w-8 3xl:w-10 4xl:w-14" />
                 <div className={cn(
-                  "absolute left-16 xl:left-20 2xl:left-40 glass px-3 py-1.5 xl:px-4 xl:py-2 2xl:px-8 2xl:py-4 rounded-lg xl:rounded-xl 2xl:rounded-2xl text-sm xl:text-base 2xl:text-3xl font-bold opacity-0 pointer-events-none transition-all group-hover:opacity-100 whitespace-nowrap",
+                  "absolute left-16 xl:left-20 2xl:left-24 3xl:left-32 4xl:left-40 glass px-3 py-1.5 xl:px-4 xl:py-2 2xl:px-6 3xl:px-8 4xl:px-8 rounded-lg xl:rounded-xl 2xl:rounded-2xl text-sm xl:text-base 2xl:text-xl 3xl:text-2xl 4xl:text-3xl font-bold opacity-0 pointer-events-none transition-all group-hover:opacity-100 whitespace-nowrap",
                   "translate-x-[-10px] group-hover:translate-x-0 z-50"
                 )}>
                   {section.label}
@@ -676,12 +676,12 @@ export default function App() {
             <button
               onClick={() => setIsTvMode(true)}
               className={cn(
-                "p-3 xl:p-4 2xl:p-10 rounded-xl 2xl:rounded-[2rem] transition-all duration-500 group relative text-white/30 hover:text-white hover:bg-white/5"
+                "p-3 xl:p-4 2xl:p-6 3xl:p-8 4xl:p-10 rounded-xl 2xl:rounded-2xl 3xl:rounded-[2rem] transition-all duration-500 group relative text-white/30 hover:text-white hover:bg-white/5"
               )}
             >
-              <Monitor className="w-6 h-6 xl:w-7 xl:h-7 2xl:w-14 2xl:h-14" />
+              <Monitor className="w-6 h-6 xl:w-7 xl:h-7 2xl:w-8 3xl:w-10 4xl:w-14" />
               <div className={cn(
-                "absolute left-16 xl:left-20 2xl:left-40 glass px-3 py-1.5 xl:px-4 xl:py-2 2xl:px-8 2xl:py-4 rounded-lg xl:rounded-xl 2xl:rounded-2xl text-sm xl:text-base 2xl:text-3xl font-bold opacity-0 pointer-events-none transition-all group-hover:opacity-100 whitespace-nowrap",
+                "absolute left-16 xl:left-20 2xl:left-24 3xl:left-32 4xl:left-40 glass px-3 py-1.5 xl:px-4 xl:py-2 2xl:px-6 3xl:px-8 4xl:px-8 rounded-lg xl:rounded-xl 2xl:rounded-2xl text-sm xl:text-base 2xl:text-xl 3xl:text-2xl 4xl:text-3xl font-bold opacity-0 pointer-events-none transition-all group-hover:opacity-100 whitespace-nowrap",
                 "translate-x-[-10px] group-hover:translate-x-0 z-50"
               )}>
                 TV Mode
@@ -689,21 +689,21 @@ export default function App() {
             </button>
           </nav>
 
-          <div className="flex flex-col gap-4 xl:gap-8 2xl:gap-16">
+          <div className="flex flex-col gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-16">
             <button 
               onClick={() => setIsAutoRotating(!isAutoRotating)}
               className={cn(
-                "p-3 xl:p-4 2xl:p-10 rounded-xl 2xl:rounded-[2rem] transition-all",
+                "p-3 xl:p-4 2xl:p-6 3xl:p-8 4xl:p-10 rounded-xl 2xl:rounded-2xl 3xl:rounded-[2rem] transition-all",
                 isAutoRotating ? "text-emerald-400 bg-emerald-400/10" : "text-white/20 bg-white/5"
               )}
             >
-              {isAutoRotating ? <Pause className="w-6 h-6 xl:w-7 xl:h-7 2xl:w-14 2xl:h-14" /> : <Play className="w-6 h-6 xl:w-7 xl:h-7 2xl:w-14 2xl:h-14" />}
+              {isAutoRotating ? <Pause className="w-6 h-6 xl:w-7 xl:h-7 2xl:w-8 3xl:w-10 4xl:w-14" /> : <Play className="w-6 h-6 xl:w-7 xl:h-7 2xl:w-8 3xl:w-10 4xl:w-14" />}
             </button>
             <button 
               onClick={handleLogout}
-              className="p-3 xl:p-4 2xl:p-10 rounded-xl 2xl:rounded-[2rem] text-rose-400 hover:bg-rose-400/10 transition-all"
+              className="p-3 xl:p-4 2xl:p-6 3xl:p-8 4xl:p-10 rounded-xl 2xl:rounded-2xl 3xl:rounded-[2rem] text-rose-400 hover:bg-rose-400/10 transition-all"
             >
-              <LogOut className="w-6 h-6 xl:w-7 xl:h-7 2xl:w-14 2xl:h-14" />
+              <LogOut className="w-6 h-6 xl:w-7 xl:h-7 2xl:w-8 3xl:w-10 4xl:w-14" />
             </button>
           </div>
         </aside>
@@ -810,7 +810,7 @@ export default function App() {
         </header>
 
         {/* Content Sections */}
-        <div className="flex-1 px-4 md:px-6 xl:px-12 2xl:px-24 pb-4 md:pb-6 xl:pb-12 2xl:pb-24 pt-4 md:pt-8 xl:pt-12 2xl:pt-24 relative overflow-hidden min-h-0">
+        <div className="flex-1 px-4 md:px-6 xl:px-12 2xl:px-14 3xl:px-16 4xl:px-24 pb-4 md:pb-6 xl:pb-12 2xl:pb-14 3xl:pb-16 4xl:pb-24 pt-4 md:pt-8 xl:pt-12 2xl:pt-14 3xl:pt-16 4xl:pt-24 relative overflow-hidden min-h-0">
           <AnimatePresence mode="wait">
             {activeSection === 0 && (
               <motion.div
@@ -821,12 +821,12 @@ export default function App() {
                 transition={{ duration: 0.8, ease: "circOut" }}
                 className="flex flex-col h-full min-h-0 overflow-y-auto scrollbar-hide"
               >
-                <div className="flex justify-between items-end mb-6 xl:mb-10 2xl:mb-20">
+                <div className="flex justify-between items-end mb-6 xl:mb-8 2xl:mb-10 3xl:mb-12 4xl:mb-20">
                   <div className="flex flex-col">
-                    <h2 className="text-2xl xl:text-3xl 2xl:text-7xl font-black tracking-tight text-glow-blue font-display uppercase">State <span className="text-orange-500">Overview</span></h2>
-                    <div className="flex items-center gap-2 xl:gap-4 2xl:gap-8 mt-1 2xl:mt-4">
-                      <div className="w-2 h-2 xl:w-3 xl:h-3 2xl:w-6 2xl:h-6 rounded-full bg-emerald-500 animate-pulse" />
-                      <span className="text-white/40 text-[10px] xl:text-sm 2xl:text-2xl font-bold uppercase tracking-widest">Live · March 2026 · 912 Active ALCs</span>
+                    <h2 className="text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl 4xl:text-7xl font-black tracking-tight text-glow-blue font-display uppercase">State <span className="text-orange-500">Overview</span></h2>
+                    <div className="flex items-center gap-2 xl:gap-3 2xl:gap-4 3xl:gap-5 4xl:gap-8 mt-1 2xl:mt-2 3xl:mt-3 4xl:mt-4">
+                      <div className="w-2 h-2 xl:w-2.5 xl:h-2.5 2xl:w-3 3xl:w-4 4xl:w-6 rounded-full bg-emerald-500 animate-pulse" />
+                      <span className="text-white/40 text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base 4xl:text-2xl font-bold uppercase tracking-widest">Live · March 2026 · 912 Active ALCs</span>
                     </div>
                   </div>
                   <div className="flex bg-white/5 p-1 rounded-xl border border-white/10">
@@ -835,7 +835,7 @@ export default function App() {
                         key={course}
                         onClick={() => setCurCourse(course)}
                         className={cn(
-                          "px-4 py-2 xl:px-6 xl:py-3 2xl:px-12 2xl:py-6 rounded-lg text-[10px] xl:text-xs 2xl:text-2xl font-black uppercase tracking-widest transition-all",
+                          "px-4 py-2 xl:px-5 xl:py-2.5 2xl:px-6 2xl:py-3 3xl:px-8 3xl:py-4 4xl:px-12 4xl:py-6 rounded-lg text-[10px] xl:text-[11px] 2xl:text-xs 3xl:text-sm 4xl:text-2xl font-black uppercase tracking-widest transition-all",
                           curCourse === course ? "bg-orange-500 text-white shadow-lg shadow-orange-500/40" : "text-white/40 hover:text-white hover:bg-white/5"
                         )}
                       >
@@ -847,7 +847,7 @@ export default function App() {
 
                 <DaysStrip />
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 xl:gap-6 2xl:gap-12 mb-6 xl:mb-10 2xl:mb-20">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 xl:gap-5 2xl:gap-6 3xl:gap-8 4xl:gap-12 mb-6 xl:mb-8 2xl:mb-10 3xl:mb-12 4xl:mb-20">
                   <StatCard label="Total Uploaded" value={formatNumber(stats.totalUpl)} subValue="Students in system" icon={Users} trend={-2.1} color="text-blue-400" progress={100} isTvMode={isTvMode} />
                   <StatCard label="Total Confirmed" value={formatNumber(stats.totalConf)} subValue="Payment completed" icon={CheckCircle2} trend={12.5} color="text-emerald-400" progress={stats.avgAchievement} isTvMode={isTvMode} />
                   <StatCard label="Pending Payment" value={formatNumber(stats.totalUpl - stats.totalConf)} subValue="Follow up required" icon={Clock} color="text-rose-400" progress={(stats.totalUpl - stats.totalConf) / stats.totalUpl * 100} isTvMode={isTvMode} />
@@ -857,21 +857,21 @@ export default function App() {
                   <StatCard label="Annual Total" value="21,401" subValue="Q1 complete" icon={TrendingUp} color="text-cyan-400" progress={12.6} isTvMode={isTvMode} />
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 xl:gap-8 2xl:gap-16 flex-1 min-h-0">
-                  <div className="lg:col-span-8 glass p-6 xl:p-10 2xl:p-20 rounded-2xl 2xl:rounded-[4rem] flex flex-col min-h-0">
-                    <div className="flex justify-between items-center mb-6 xl:mb-10 2xl:mb-20">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 xl:gap-8 2xl:gap-10 3xl:gap-12 4xl:gap-16 flex-1 min-h-0">
+                  <div className="lg:col-span-8 glass p-6 xl:p-8 2xl:p-10 3xl:p-12 4xl:p-20 rounded-2xl 2xl:rounded-[2.5rem] 3xl:rounded-[3rem] 4xl:rounded-[4rem] flex flex-col min-h-0">
+                    <div className="flex justify-between items-center mb-6 xl:mb-8 2xl:mb-10 3xl:mb-12 4xl:mb-20">
                       <div>
-                        <h3 className="text-xl xl:text-3xl 2xl:text-6xl font-black text-white font-display">Monthly Trend</h3>
-                        <p className="text-white/30 text-sm xl:text-lg 2xl:text-4xl mt-1 2xl:mt-4 uppercase tracking-widest font-bold">2026 Confirmed vs 2025 Actual</p>
+                        <h3 className="text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-6xl font-black text-white font-display">Monthly Trend</h3>
+                        <p className="text-white/30 text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl mt-1 2xl:mt-2 3xl:mt-3 4xl:mt-4 uppercase tracking-widest font-bold">2026 Confirmed vs 2025 Actual</p>
                       </div>
-                      <div className="flex gap-4 xl:gap-10 2xl:gap-20">
-                        <div className="flex items-center gap-2 xl:gap-4">
-                          <div className="w-2 h-2 xl:w-4 xl:h-4 2xl:w-8 2xl:h-8 rounded-full bg-orange-500" />
-                          <span className="text-white/60 text-xs xl:text-sm 2xl:text-3xl font-bold uppercase font-display">2026</span>
+                      <div className="flex gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-20">
+                        <div className="flex items-center gap-2 xl:gap-3 2xl:gap-4 3xl:gap-5 4xl:gap-8">
+                          <div className="w-2 h-2 xl:w-3 xl:h-3 2xl:w-4 3xl:w-6 4xl:w-8 rounded-full bg-orange-500" />
+                          <span className="text-white/60 text-xs xl:text-sm 2xl:text-base 3xl:text-lg 4xl:text-3xl font-bold uppercase font-display">2026</span>
                         </div>
-                        <div className="flex items-center gap-2 xl:gap-4">
-                          <div className="w-2 h-2 xl:w-4 xl:h-4 2xl:w-8 2xl:h-8 rounded-full bg-blue-500" />
-                          <span className="text-white/60 text-xs xl:text-sm 2xl:text-3xl font-bold uppercase font-display">2025</span>
+                        <div className="flex items-center gap-2 xl:gap-3 2xl:gap-4 3xl:gap-5 4xl:gap-8">
+                          <div className="w-2 h-2 xl:w-3 xl:h-3 2xl:w-4 3xl:w-6 4xl:w-8 rounded-full bg-blue-500" />
+                          <span className="text-white/60 text-xs xl:text-sm 2xl:text-base 3xl:text-lg 4xl:text-3xl font-bold uppercase font-display">2025</span>
                         </div>
                       </div>
                     </div>
@@ -892,10 +892,10 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="lg:col-span-4 flex flex-col gap-6 xl:gap-8 2xl:gap-16">
-                    <div className="glass p-6 xl:p-10 2xl:p-20 rounded-2xl 2xl:rounded-[4rem] flex flex-col min-h-0">
-                      <h3 className="text-xl xl:text-3xl 2xl:text-6xl font-black text-white mb-2 xl:mb-4 2xl:mb-8 font-display">Course Split</h3>
-                      <p className="text-white/30 text-sm xl:text-lg 2xl:text-4xl mb-4 xl:mb-10 2xl:mb-20 uppercase tracking-widest font-bold">Admission distribution by stream</p>
+                  <div className="lg:col-span-4 flex flex-col gap-6 xl:gap-8 2xl:gap-10 3xl:gap-12 4xl:gap-16">
+                    <div className="glass p-6 xl:p-8 2xl:p-10 3xl:p-12 4xl:p-20 rounded-2xl 2xl:rounded-[2.5rem] 3xl:rounded-[3rem] 4xl:rounded-[4rem] flex flex-col min-h-0">
+                      <h3 className="text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-6xl font-black text-white mb-2 xl:mb-3 2xl:mb-4 3xl:mb-6 4xl:mb-8 font-display">Course Split</h3>
+                      <p className="text-white/30 text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl mb-4 xl:mb-6 2xl:mb-8 3xl:mb-10 4xl:mb-20 uppercase tracking-widest font-bold">Admission distribution by stream</p>
                       <div className="flex-1 flex flex-col items-center justify-center min-h-[200px] relative">
                         <ResponsiveContainer width="100%" height="100%">
                           <PieChart>
@@ -907,23 +907,23 @@ export default function App() {
                           </PieChart>
                         </ResponsiveContainer>
                         <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                          <span className="text-3xl xl:text-5xl 2xl:text-9xl font-black text-white font-display">{formatNumber(stats.totalConf)}</span>
-                          <span className="text-white/30 text-[10px] xl:text-xs 2xl:text-3xl font-bold uppercase tracking-widest">Confirmed</span>
+                          <span className="text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl 4xl:text-9xl font-black text-white font-display">{formatNumber(stats.totalConf)}</span>
+                          <span className="text-white/30 text-[10px] xl:text-xs 2xl:text-sm 3xl:text-lg 4xl:text-3xl font-bold uppercase tracking-widest">Confirmed</span>
                         </div>
                       </div>
-                      <div className="grid grid-cols-2 gap-4 xl:gap-8 2xl:gap-16 w-full mt-6 xl:mt-10 2xl:mt-20">
-                        <div className="flex items-center gap-2 xl:gap-4 2xl:gap-8">
-                          <div className="w-2 h-2 xl:w-4 xl:h-4 2xl:w-8 2xl:h-8 rounded-full bg-[#f97316]" />
+                      <div className="grid grid-cols-2 gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-16 w-full mt-6 xl:mt-8 2xl:mt-10 3xl:mt-12 4xl:mt-20">
+                        <div className="flex items-center gap-2 xl:gap-3 2xl:gap-4 3xl:gap-5 4xl:gap-8">
+                          <div className="w-2 h-2 xl:w-3 xl:h-3 2xl:w-4 3xl:w-6 4xl:w-8 rounded-full bg-[#f97316]" />
                           <div className="flex flex-col">
-                            <span className="text-white/40 text-[10px] xl:text-xs 2xl:text-2xl font-bold uppercase tracking-widest">OS-CIT</span>
-                            <span className="text-lg xl:text-xl 2xl:text-4xl font-black text-white font-display">86.7%</span>
+                            <span className="text-white/40 text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base 4xl:text-2xl font-bold uppercase tracking-widest">OS-CIT</span>
+                            <span className="text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl font-black text-white font-display">86.7%</span>
                           </div>
                         </div>
-                        <div className="flex items-center gap-2 xl:gap-4 2xl:gap-8">
-                          <div className="w-2 h-2 xl:w-4 xl:h-4 2xl:w-8 2xl:h-8 rounded-full bg-[#3b82f6]" />
+                        <div className="flex items-center gap-2 xl:gap-3 2xl:gap-4 3xl:gap-5 4xl:gap-8">
+                          <div className="w-2 h-2 xl:w-3 xl:h-3 2xl:w-4 3xl:w-6 4xl:w-8 rounded-full bg-[#3b82f6]" />
                           <div className="flex flex-col">
-                            <span className="text-white/40 text-[10px] xl:text-xs 2xl:text-2xl font-bold uppercase tracking-widest">OCOC</span>
-                            <span className="text-lg xl:text-xl 2xl:text-4xl font-black text-white font-display">13.3%</span>
+                            <span className="text-white/40 text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base 4xl:text-2xl font-bold uppercase tracking-widest">OCOC</span>
+                            <span className="text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl font-black text-white font-display">13.3%</span>
                           </div>
                         </div>
                       </div>
@@ -948,9 +948,9 @@ export default function App() {
                 <SectionHeader title="District Performance" subtitle="Detailed breakdown of admissions and targets across all 30 districts" />
                 
                 <div className="flex-1 min-h-0">
-                  <div className="glass rounded-2xl xl:rounded-[4rem] overflow-hidden flex flex-col h-full min-h-0">
+                  <div className="glass rounded-2xl xl:rounded-[2.5rem] 3xl:rounded-[3rem] 4xl:rounded-[4rem] overflow-hidden flex flex-col h-full min-h-0">
                     {/* Table Header - Hidden on mobile */}
-                    <div className="hidden md:grid bg-white/5 px-6 xl:px-12 2xl:px-24 py-4 xl:py-8 2xl:py-16 grid-cols-12 gap-4 xl:gap-8 2xl:gap-16 text-white/40 text-xs xl:text-sm 2xl:text-3xl font-black uppercase tracking-widest border-b border-white/10">
+                    <div className="hidden md:grid bg-white/5 px-6 xl:px-8 2xl:px-10 3xl:px-12 4xl:px-24 py-4 xl:py-5 2xl:py-6 3xl:py-8 4xl:py-16 grid-cols-12 gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-16 text-white/40 text-xs xl:text-sm 2xl:text-base 3xl:text-lg 4xl:text-3xl font-black uppercase tracking-widest border-b border-white/10">
                       <div className="col-span-3">District Name</div>
                       <div className="col-span-1 text-center">ALCs</div>
                       <div className="col-span-2 text-center">Target</div>
@@ -965,20 +965,20 @@ export default function App() {
                         return (
                           <React.Fragment key={d.d}>
                             {/* Desktop Row */}
-                            <div className="hidden md:grid px-6 xl:px-12 2xl:px-24 py-4 xl:py-8 2xl:py-16 grid-cols-12 gap-4 xl:gap-8 2xl:gap-16 items-center border-b border-white/5 hover:bg-white/5 transition-all group">
-                              <div className="col-span-3 flex items-center gap-3 xl:gap-8 2xl:gap-16">
-                                <span className="text-white/20 font-mono text-sm xl:text-xl 2xl:text-4xl w-8 xl:w-16">{i + 1}</span>
-                                <span className="text-base xl:text-2xl 2xl:text-5xl font-bold text-white group-hover:text-blue-400 transition-colors truncate">{d.d}</span>
+                            <div className="hidden md:grid px-6 xl:px-8 2xl:px-10 3xl:px-12 4xl:px-24 py-4 xl:py-5 2xl:py-6 3xl:py-8 4xl:py-16 grid-cols-12 gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-16 items-center border-b border-white/5 hover:bg-white/5 transition-all group">
+                              <div className="col-span-3 flex items-center gap-3 xl:gap-4 2xl:gap-6 3xl:gap-8 4xl:gap-16">
+                                <span className="text-white/20 font-mono text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl w-8 xl:w-10 2xl:w-12 3xl:w-16">{i + 1}</span>
+                                <span className="text-base xl:text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-5xl font-bold text-white group-hover:text-blue-400 transition-colors truncate">{d.d}</span>
                               </div>
-                              <div className="col-span-1 text-center text-sm xl:text-xl 2xl:text-4xl font-medium text-white/60">{d.alc}</div>
-                              <div className="col-span-2 text-center text-sm xl:text-xl 2xl:text-4xl font-mono text-white/80">{formatNumber(d.mt)}</div>
-                              <div className="col-span-2 text-center text-sm xl:text-xl 2xl:text-4xl font-mono text-white/80">{formatNumber(d.upl)}</div>
-                              <div className="col-span-2 text-center text-sm xl:text-xl 2xl:text-4xl font-mono font-black text-blue-400">{formatNumber(d.conf)}</div>
-                              <div className="col-span-2 flex flex-col items-end gap-1 xl:gap-4">
-                                <span className={cn("text-sm xl:text-2xl 2xl:text-5xl font-black", ach >= 40 ? "text-emerald-400" : ach >= 25 ? "text-amber-400" : "text-rose-400")}>
+                              <div className="col-span-1 text-center text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl font-medium text-white/60">{d.alc}</div>
+                              <div className="col-span-2 text-center text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl font-mono text-white/80">{formatNumber(d.mt)}</div>
+                              <div className="col-span-2 text-center text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl font-mono text-white/80">{formatNumber(d.upl)}</div>
+                              <div className="col-span-2 text-center text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl font-mono font-black text-blue-400">{formatNumber(d.conf)}</div>
+                              <div className="col-span-2 flex flex-col items-end gap-1 xl:gap-2 2xl:gap-3 3xl:gap-4 4xl:gap-4">
+                                <span className={cn("text-sm xl:text-base 2xl:text-lg 3xl:text-2xl 4xl:text-5xl font-black", ach >= 40 ? "text-emerald-400" : ach >= 25 ? "text-amber-400" : "text-rose-400")}>
                                   {formatPercent(ach)}
                                 </span>
-                                <div className="w-16 xl:w-32 2xl:w-64 h-1 xl:h-3 2xl:h-6 bg-white/5 rounded-full overflow-hidden">
+                                <div className="w-16 xl:w-20 2xl:w-24 3xl:w-32 4xl:w-64 h-1 xl:h-1.5 2xl:h-2 3xl:h-3 4xl:h-6 bg-white/5 rounded-full overflow-hidden">
                                   <div className={cn("h-full transition-all duration-1000", ach >= 40 ? "bg-emerald-500" : ach >= 25 ? "bg-amber-500" : "bg-rose-500")} style={{ width: `${Math.min(100, ach)}%` }} />
                                 </div>
                               </div>
@@ -988,24 +988,24 @@ export default function App() {
                             <div className="md:hidden p-4 border-b border-white/5 space-y-4">
                               <div className="flex justify-between items-center">
                                 <div className="flex items-center gap-3">
-                                  <span className="text-white/20 font-mono text-xs">{i + 1}</span>
-                                  <span className="text-lg font-bold text-white">{d.d}</span>
+                                  <span className="text-white/20 font-mono text-xs xl:text-sm 2xl:text-base 3xl:text-lg 4xl:text-2xl">{i + 1}</span>
+                                  <span className="text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-5xl font-bold text-white">{d.d}</span>
                                 </div>
-                                <span className={cn("text-sm font-black", ach >= 40 ? "text-emerald-400" : ach >= 25 ? "text-amber-400" : "text-rose-400")}>
+                                <span className={cn("text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl font-black", ach >= 40 ? "text-emerald-400" : ach >= 25 ? "text-amber-400" : "text-rose-400")}>
                                   {formatPercent(ach)}
                                 </span>
                               </div>
                               <div className="grid grid-cols-2 gap-4">
                                 <div className="flex flex-col">
-                                  <span className="text-white/30 text-[8px] uppercase font-bold">Confirmed / Target</span>
-                                  <span className="text-white text-sm font-mono">{formatNumber(d.conf)} / {formatNumber(d.mt)}</span>
+                                  <span className="text-white/30 text-[8px] xl:text-[10px] 2xl:text-xs 3xl:text-sm 4xl:text-2xl font-bold uppercase tracking-widest">Confirmed / Target</span>
+                                  <span className="text-white text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl font-mono">{formatNumber(d.conf)} / {formatNumber(d.mt)}</span>
                                 </div>
                                 <div className="flex flex-col items-end">
-                                  <span className="text-white/30 text-[8px] uppercase font-bold">ALCs</span>
-                                  <span className="text-white text-sm">{d.alc}</span>
+                                  <span className="text-white/30 text-[8px] xl:text-[10px] 2xl:text-xs 3xl:text-sm 4xl:text-2xl font-bold uppercase tracking-widest">ALCs</span>
+                                  <span className="text-white text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl">{d.alc}</span>
                                 </div>
                               </div>
-                              <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+                              <div className="w-full h-1.5 xl:h-2 2xl:h-3 3xl:h-4 4xl:h-8 bg-white/5 rounded-full overflow-hidden">
                                 <div className={cn("h-full", ach >= 40 ? "bg-emerald-500" : ach >= 25 ? "bg-amber-500" : "bg-rose-500")} style={{ width: `${Math.min(100, ach)}%` }} />
                               </div>
                             </div>
@@ -1029,19 +1029,19 @@ export default function App() {
               >
                 <SectionHeader title="RM Performance" subtitle="Regional Manager zone-wise strategic tracking and efficiency metrics" />
                 
-                <div className="grid grid-cols-1 gap-6 xl:gap-10 2xl:gap-20">
+                <div className="grid grid-cols-1 gap-6 xl:gap-8 2xl:gap-10 3xl:gap-12 4xl:gap-20">
                   <RMZones />
                   
-                  <div className="glass p-8 xl:p-12 2xl:p-24 rounded-2xl 2xl:rounded-[4rem]">
-                    <h3 className="text-xl xl:text-3xl 2xl:text-6xl font-black text-white mb-8 xl:mb-16 2xl:mb-32">RM Conversion Funnel</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-16 2xl:gap-32">
+                  <div className="glass p-8 xl:p-10 2xl:p-12 3xl:p-16 4xl:p-24 rounded-2xl 2xl:rounded-[2.5rem] 3xl:rounded-[3rem] 4xl:rounded-[4rem]">
+                    <h3 className="text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-6xl font-black text-white mb-8 xl:mb-10 2xl:mb-12 3xl:mb-16 4xl:mb-32 font-display">RM Conversion Funnel</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-10 2xl:gap-12 3xl:gap-16 4xl:gap-32">
                       {RM_DATA.map(rm => (
-                        <div key={rm.name} className="space-y-4 xl:space-y-8 2xl:space-y-16">
+                        <div key={rm.name} className="space-y-4 xl:space-y-5 2xl:space-y-6 3xl:space-y-8 4xl:space-y-16">
                           <div className="flex justify-between items-end">
-                            <span className="text-white font-bold text-lg xl:text-2xl 2xl:text-5xl">{rm.name}</span>
-                            <span className="text-white/40 text-sm xl:text-xl 2xl:text-4xl font-mono">{rm.pct}% Achievement</span>
+                            <span className="text-white font-bold text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-5xl">{rm.name}</span>
+                            <span className="text-white/40 text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl font-mono">{rm.pct}% Achievement</span>
                           </div>
-                          <div className="relative h-4 xl:h-8 2xl:h-16 bg-white/5 rounded-full overflow-hidden">
+                          <div className="relative h-4 xl:h-5 2xl:h-6 3xl:h-8 4xl:h-16 bg-white/5 rounded-full overflow-hidden">
                             <motion.div
                               initial={{ width: 0 }}
                               animate={{ width: `${rm.pct}%` }}
@@ -1049,7 +1049,7 @@ export default function App() {
                               style={{ backgroundColor: rm.color }}
                             />
                           </div>
-                          <div className="flex justify-between text-white/30 text-xs xl:text-lg 2xl:text-3xl font-bold uppercase tracking-widest">
+                          <div className="flex justify-between text-white/30 text-xs xl:text-sm 2xl:text-base 3xl:text-lg 4xl:text-3xl font-bold uppercase tracking-widest">
                             <span>Confirmed: {formatNumber(rm.conf)}</span>
                             <span>Target: {formatNumber(rm.tgt)}</span>
                           </div>
@@ -1072,39 +1072,39 @@ export default function App() {
               >
                 <SectionHeader title="ALC Infrastructure" subtitle="Real-time status and efficiency tracking of Authorized Learning Centers" />
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-10 2xl:gap-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-8 2xl:gap-10 3xl:gap-12 4xl:gap-20">
                   {ALC_DATA.map((alc) => (
-                    <div key={alc.id} className="glass p-6 xl:p-10 2xl:p-20 rounded-2xl 2xl:rounded-[3rem] border border-white/5 hover:bg-white/10 transition-all">
-                      <div className="flex justify-between items-start mb-4 xl:mb-8 2xl:mb-16">
+                    <div key={alc.id} className="glass p-6 xl:p-8 2xl:p-10 3xl:p-12 4xl:p-20 rounded-2xl 2xl:rounded-[2.5rem] 3xl:rounded-[3rem] 4xl:rounded-[3.5rem] border border-white/5 hover:bg-white/10 transition-all">
+                      <div className="flex justify-between items-start mb-4 xl:mb-6 2xl:mb-8 3xl:mb-10 4xl:mb-16">
                         <div>
-                          <p className="text-white/30 text-[10px] xl:text-sm 2xl:text-2xl font-bold uppercase tracking-widest">{alc.id}</p>
-                          <h4 className="text-lg xl:text-2xl 2xl:text-5xl font-black mt-1 2xl:mt-4">{alc.name}</h4>
-                          <p className="text-white/40 text-xs xl:text-lg 2xl:text-3xl mt-1">{alc.type}</p>
+                          <p className="text-white/30 text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base 4xl:text-2xl font-bold uppercase tracking-widest">{alc.id}</p>
+                          <h4 className="text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-5xl font-black mt-1 2xl:mt-2 3xl:mt-3 4xl:mt-4">{alc.name}</h4>
+                          <p className="text-white/40 text-xs xl:text-sm 2xl:text-base 3xl:text-lg 4xl:text-3xl mt-1">{alc.type}</p>
                         </div>
                         <span className={cn(
-                          "px-3 py-1 xl:px-6 xl:py-2 2xl:px-12 2xl:py-4 rounded-full text-[10px] xl:text-sm 2xl:text-2xl font-bold uppercase tracking-wider",
+                          "px-3 py-1 xl:px-4 xl:py-2 2xl:px-6 3xl:px-8 4xl:px-12 2xl:py-3 3xl:py-4 4xl:py-4 rounded-full text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base 4xl:text-2xl font-bold uppercase tracking-wider",
                           alc.status === 'Active' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
                         )}>
                           {alc.status}
                         </span>
                       </div>
-                      <div className="space-y-2 xl:space-y-4 2xl:space-y-8">
-                        <div className="flex justify-between text-xs xl:text-lg 2xl:text-3xl">
+                      <div className="space-y-2 xl:space-y-3 2xl:space-y-4 3xl:space-y-6 4xl:space-y-8">
+                        <div className="flex justify-between text-xs xl:text-sm 2xl:text-base 3xl:text-lg 4xl:text-3xl">
                           <span className="text-white/40">Operational Efficiency</span>
                           <span className="font-black text-white">{alc.efficiency}%</span>
                         </div>
-                        <div className="w-full h-2 xl:h-4 2xl:h-8 bg-white/5 rounded-full overflow-hidden">
+                        <div className="w-full h-2 xl:h-2.5 2xl:h-3 3xl:h-4 4xl:h-8 bg-white/5 rounded-full overflow-hidden">
                           <motion.div initial={{ width: 0 }} animate={{ width: `${alc.efficiency}%` }} className={cn("h-full", alc.efficiency >= 90 ? "bg-emerald-500" : alc.efficiency >= 70 ? "bg-blue-500" : "bg-amber-500")} />
                         </div>
                       </div>
-                      <div className="mt-6 xl:mt-10 2xl:mt-20 pt-6 xl:pt-10 2xl:pt-20 border-t border-white/5 grid grid-cols-2 gap-4">
+                      <div className="mt-6 xl:mt-8 2xl:mt-10 3xl:mt-12 4xl:mt-20 pt-6 xl:pt-8 2xl:pt-10 3xl:pt-12 4xl:pt-20 border-t border-white/5 grid grid-cols-2 gap-4">
                         <div className="flex flex-col">
-                          <span className="text-white/20 text-[8px] xl:text-xs 2xl:text-2xl font-bold uppercase">Uptime</span>
-                          <span className="text-white font-mono text-sm xl:text-xl 2xl:text-4xl">99.9%</span>
+                          <span className="text-white/20 text-[8px] xl:text-[10px] 2xl:text-xs 3xl:text-sm 4xl:text-2xl font-bold uppercase">Uptime</span>
+                          <span className="text-white font-mono text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl">99.9%</span>
                         </div>
                         <div className="flex flex-col items-end">
-                          <span className="text-white/20 text-[8px] xl:text-xs 2xl:text-2xl font-bold uppercase">Last Sync</span>
-                          <span className="text-white font-mono text-sm xl:text-xl 2xl:text-4xl">2m ago</span>
+                          <span className="text-white/20 text-[8px] xl:text-[10px] 2xl:text-xs 3xl:text-sm 4xl:text-2xl font-bold uppercase">Last Sync</span>
+                          <span className="text-white font-mono text-sm xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-4xl">2m ago</span>
                         </div>
                       </div>
                     </div>
